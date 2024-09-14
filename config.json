@@ -1,0 +1,8 @@
+{
+  "urls": [
+    {
+      "url": "https://digiwinabi-paas.apps.digiwincloud.com.cn/abi/esysmgr/register",
+      "origin_prometheus": "paas区"
+    }
+  ]
+}
