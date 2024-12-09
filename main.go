@@ -84,7 +84,7 @@ func fetchData(urlConfig URLConfig) {
 		return
 	}
 
-	// Perform the request
+	// Perform the POST request
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		log.Printf("Error performing POST request to %s: %v", urlConfig.URL, err)
@@ -92,6 +92,27 @@ func fetchData(urlConfig URLConfig) {
 		return
 	}
 	defer resp.Body.Close()
+
+	// Check if the status code is not 200
+	if resp.StatusCode != http.StatusOK {
+		log.Printf("POST request to %s failed with status code: %d. Retrying with GET request.", urlConfig.URL, resp.StatusCode)
+		// Create a GET request as fallback
+		req, err = http.NewRequest("GET", urlConfig.URL, nil)
+		if err != nil {
+			log.Printf("Error creating GET request for %s: %v", urlConfig.URL, err)
+			metric.WithLabelValues(urlConfig.URL, urlConfig.OriginPrometheus).Set(-1) // Set default value on failure
+			return
+		}
+
+		// Perform the GET request
+		resp, err = http.DefaultClient.Do(req)
+		if err != nil {
+			log.Printf("Error performing GET request to %s: %v", urlConfig.URL, err)
+			metric.WithLabelValues(urlConfig.URL, urlConfig.OriginPrometheus).Set(-1) // Set default value on failure
+			return
+		}
+		defer resp.Body.Close()
+	}
 
 	var apiResponse APIResponse
 	if err := json.NewDecoder(resp.Body).Decode(&apiResponse); err != nil {

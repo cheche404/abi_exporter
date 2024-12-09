@@ -3,6 +3,50 @@
     {
       "url": "https://digiwinabi-paas.apps.digiwincloud.com.cn/abi/esysmgr/register",
       "origin_prometheus": "paas区"
+    },
+    {
+      "url": "https://digiwinabi-dev.apps.digiwincloud.com.cn/abi/esysmgr/register",
+      "origin_prometheus": "华为应用开发区"
+    },
+    {
+      "url": "https://digiwinabi-test.apps.digiwincloud.com.cn/abi/esysmgr/register",
+      "origin_prometheus": "华为测试区"
+    },
+    {
+      "url": "https://digiwinabi-a.apps.digiwincloud.com.cn/abi/esysmgr/register",
+      "origin_prometheus": "华为云-a"
+    },
+    {
+      "url": "https://digiwinabi-b.apps.digiwincloud.com.cn/abi/esysmgr/register",
+      "origin_prometheus": "华为云-b"
+    },
+    {
+      "url": "https://scs-digiwinabi-a.apps.digiwincloud.com.cn/abi/esysmgr/register",
+      "origin_prometheus": "华为云scs-a"
+    },
+    {
+      "url": "https://scs-digiwinabi-b.apps.digiwincloud.com.cn/abi/esysmgr/register",
+      "origin_prometheus": "华为云scs-b"
+    },
+    {
+      "url": "https://digiwinabi-a.apps.digiwincloud.com/abi/esysmgr/register",
+      "origin_prometheus": "微软云-a"
+    },
+    {
+      "url": "https://digiwinabi-b.apps.digiwincloud.com/abi/esysmgr/register",
+      "origin_prometheus": "微软云-b"
+    },
+    {
+      "url": "https://scs-digiwinabi-a.apps.digiwincloud.com/abi/esysmgr/register",
+      "origin_prometheus": "微软云scs-a"
+    },
+    {
+      "url": "https://scs-digiwinabi-b.apps.digiwincloud.com/abi/esysmgr/register",
+      "origin_prometheus": "微软云scs-b"
+    },
+    {
+      "url": "https://digiwinrpt-paas.apps.digiwincloud.com.cn/wyn/register/time",
+      "origin_prometheus": "阿里云paas区-葡萄城wyn"
     }
   ]
 }
